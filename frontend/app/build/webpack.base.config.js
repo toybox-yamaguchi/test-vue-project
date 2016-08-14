@@ -28,6 +28,18 @@ module.exports = {
     ],
   },
   module: {
+    preLoaders:[
+      {
+        test: /\.vue$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     // loader：拡張子別で読み込み設定を行う
     // 「-loader」の記述は省略できる
     loaders: [
@@ -97,6 +109,9 @@ module.exports = {
       //bar: path.join('bower_components/foo/plugins/bar.js')
     }
   },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
+  }
 }
 
 //@app.js

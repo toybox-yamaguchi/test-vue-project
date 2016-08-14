@@ -2,7 +2,7 @@ import App from './pages/App'
 import router from './router'
 import store from './vuex/store' // vuex store instance
 
-//cssのよみこみ
+// cssのよみこみ
 import normalizeCSS from './libs/css/normalize.css'
 import bootstrapCSS from './libs/css/bootstrap.min.css'
 import slickCSS from './libs/sass/slick.scss'
@@ -21,4 +21,3 @@ VueTouch.config.swipe = {
 import { sync } from 'vuex-router-sync'
 sync(store, router)
 router.start(App, '#app')
-

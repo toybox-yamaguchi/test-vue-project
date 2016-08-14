@@ -1,9 +1,7 @@
 <template>
   <!-- バインディングに失敗すると動かない -->
   <div class="cart">
-    <post-message-component
-      @event-post="addTweet"
-    ></post-message-component>
+    <post-message-component @event-post="addTweet"></post-message-component>
 
     <div>
       <button v-on:click="update" class="btn btn-info-outline">Timeline update</button>

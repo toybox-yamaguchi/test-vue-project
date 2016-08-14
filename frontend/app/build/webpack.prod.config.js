@@ -1,11 +1,15 @@
 var webpack = require('webpack')
 var config = require('./webpack.base.config')
-module.exports = config
+var merge = require('webpack-merge')
+
+module.exports = merge(config, {});
 
 //production設定時
 if (process.env.NODE_ENV === 'production') {
-  //.mapファイルの出力
-  module.exports.devtool = '#source-map'
+  module.exports = merge(config, {
+    devtool:'#source-map',
+  });
+
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -13,6 +17,10 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    /*
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
+    ),*/
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

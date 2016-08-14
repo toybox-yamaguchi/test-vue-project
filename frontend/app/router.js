@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 var router = new VueRouter({
-  history: false
+  history: true
 })
 
 router.map({
