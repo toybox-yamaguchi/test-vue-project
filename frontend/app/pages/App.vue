@@ -1,34 +1,50 @@
 <template>
-  <div id="app">
-    <h1>{{ msg }}</h1>
+<div class="app">
+  <div class="header">
+  <header-bar></header-bar>
   </div>
+  <div class="page">
+    <router-view></router-view>
+  </div>
+</div>
 </template>
 
 <script>
-  import normalizeCSS from '../libs/css/normalize.css'
-  import bootstrapCSS from '../libs/css/bootstrap.min.css'
-  import slickCSS from '../libs/sass/slick.scss'
-
+  import store from '../vuex/store'
+  import HeaderBar from '../components/HeaderBar'
+  //
   export default {
-    data () {
-      return {
-        // note: changing this line won't causes changes
-        // with hot-reload because the reloaded component
-        // preserves its current state and we are modifying
-        // its initial state.
-        msg:'Hello Vue!'
-      }
-    }
+    store, // == store: store
+    // http://vuex.vuejs.org/en/state.html
+    // > 1.Install Vuex and connect your root component to the store:
+
+    // https://jp.vuejs.org/guide/components.html#ローカル登録
+    // コンポーネントのローカル登録
+    components: {HeaderBar}
   }
 </script>
 
-<style lang="sass">
-  $color:red;
-  body {
-    font-family: Helvetica, sans-serif;
+<style>
+html {
+}
+body {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-    .aaa{
-      color:$color;
-    }
-  }
+.header {
+  border-bottom: 1px solid #b3b3b3;
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.page {
+  width: 100%;
+  padding: 30px 50px;
+}
 </style>

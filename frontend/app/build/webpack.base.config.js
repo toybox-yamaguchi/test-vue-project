@@ -36,7 +36,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue',
         loaders: {
-          'scss': 'vue-style!css!sass'
+          //'scss': 'vue-style!css!sass'
         }
       },
       // cssファイルを読み込んだ場合にcss-loaderを使用する。
@@ -47,7 +47,7 @@ module.exports = {
       // scssファイルを読み込んだ場合にcss-loaderを使用する。
       {
         test: /\.scss$/,
-        loader: extractCSS.extract('style', 'css', 'sass')//外部化する
+        loader: extractCSS.extract('style', 'css!sass')//外部化する
       },
       // jsファイルを読み込んだ場合にbabel-loaderを使用する。
       {
@@ -89,7 +89,7 @@ module.exports = {
   // 他の設定
   resolve: {
     //読み込む際に拡張子を省略できるようにする。jsはデフォルト。
-    //extenstions: ['', '.js', '.json', '.html']
+    extensions: ['', '.js', '.vue'],
 
     //ファイル単位でaliasをはる
     alias: {

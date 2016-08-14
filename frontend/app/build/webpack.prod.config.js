@@ -1,6 +1,6 @@
 var webpack = require('webpack')
 var config = require('./webpack.base.config')
-
+module.exports = config
 
 //production設定時
 if (process.env.NODE_ENV === 'production') {
@@ -19,8 +19,6 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     //よく使われるモジュールに振るIDの桁数をより短くすることでよりコードを圧縮する。
-    //new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin()
   ])
 }
-
-module.exports = config
