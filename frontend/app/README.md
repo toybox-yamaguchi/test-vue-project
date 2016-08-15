@@ -13,12 +13,12 @@
 　　┣ /js  
 　　┣ /css  
 　　┣ /sass  
-　┣ /modules：プロジェクトライブラリ
+　┣ /modules：プロジェクトライブラリ  
 　　┣ /js  
 　　┣ /css  
 　　┣ /sass  
 　┣ /pages：SPAページファイル  
-　┣ /vuex(models)：モデルファイル
+　┣ /vuex(models)：モデルファイル  
 　┣ main.js  
 　┣ router.js  
 ┣ .babellrc：babel設定ファイル  
