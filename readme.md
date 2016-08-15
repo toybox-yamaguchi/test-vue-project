@@ -5,10 +5,10 @@
 ┣ .gitignore：git設定ファイル  
 ┣ README.md：これ  
 /public：  
-　┣ /css：cssファイル
-  　┣ app.css
-　┣ /js：jsファイル 
-　　┣ app.js
+　┣ /css：cssファイル  
+  　┣ app.css  
+　┣ /js：jsファイル   
+　　┣ app.js  
 　┣ /img：画像ファイル  
 　┣ /data：データファイル（json、フォント、映像等）  
 　┣ index.html  
