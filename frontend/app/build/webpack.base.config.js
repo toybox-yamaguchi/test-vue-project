@@ -5,7 +5,12 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('css/[name].css');
 
-setting = {
+//entryで使用されるJSファイル群で使用される共通モジュールはapp.jsに
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('app.js');
+
+//ローカル設定
+localSetting = {
+  //パス
   path:{
     dist:{
       root:'../../../public/',
@@ -18,7 +23,7 @@ module.exports = {
     app:'./main.js'
   },
   output: {
-    path: path.resolve(__dirname, setting.path.dist.root),
+    path: path.resolve(__dirname, localSetting.path.dist.root),
     filename: 'js/[name].js'
   },
   resolveLoader: {
@@ -92,7 +97,8 @@ module.exports = {
     ]
   },
   plugins: [
-    extractCSS
+    extractCSS,
+    commonsPlugin
   ],
 
   eslint: {
@@ -106,7 +112,8 @@ module.exports = {
   resolve: {
     //読み込む際に拡張子を省略できるようにする。jsはデフォルト。
     extensions: ['', '.js', '.vue'],
-
+    // 探索するモジュール用ディレクトリを指定
+    modulesDirectories: ['node_modules', 'bower_components'],
     //ファイル単位でaliasをはる
     alias: {
       //例
