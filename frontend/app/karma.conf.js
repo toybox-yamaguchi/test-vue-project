@@ -27,7 +27,7 @@ module.exports = (config) => {
       'karma-mocha',
       'karma-webpack',
       'karma-phantomjs-launcher',
-      'karma-sourcemap-loader'
+      'karma-sourcemap-loader'// テストがコケた時に行番号等の情報を出す
     ],
 
     // preprocess matching files before serving them to the browser
@@ -41,9 +41,22 @@ module.exports = (config) => {
     // jsファイルをES6 → ES5に変換 (preprocessorsの設定でtest配下のみ)
     webpack: {
       devtool: 'inline-source-map',
+      eslint: {
+        stopOnError: false,
+        stopOnWarning: true,
+        showWarnings: true,
+        formatter: require('eslint-friendly-formatter')
+      },
       module: {
         // https://github.com/power-assert-js/babel-plugin-espower/issues/14
         exprContextCritical: false,
+        preLoaders:[
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'eslint'
+          }
+        ],
         loaders: [
           {
             test: /\.js$/,
@@ -84,6 +97,8 @@ module.exports = (config) => {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
+    //変更監視間隔：250だと短すぎるので
+    autoWatchBatchDelay:5000,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -96,6 +111,6 @@ module.exports = (config) => {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
   })
 }

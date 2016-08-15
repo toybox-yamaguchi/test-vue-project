@@ -7,9 +7,9 @@
     "_watch": "webpack --watch --progress --config build/webpack.dev.config.js",
     "_serve": "browser-sync start --config build/bs-config.js",
     "_production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.config.js",
-    "_test": "karma start",
+    "test": "karma start",
     "dev": "npm run _watch & npm run _serve",
-    "build": "npm run _test & npm run _production"
+    "build": "karma start --single-run && npm run _production"
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",

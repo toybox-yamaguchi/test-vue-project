@@ -48,7 +48,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue',
         loaders: {
-          //中のstylesでsassを使う
+          //中のstylesタグでsassを使う設定
           'scss': 'vue-style!css!sass'
         }
       },
@@ -60,6 +60,7 @@ module.exports = {
       // scssファイルを読み込んだ場合にcss-loaderを使用する。
       {
         test: /\.scss$/,
+        // http://stackoverflow.com/questions/29210325/webpack-sass-where-is-the-css-file
         loader: extractCSS.extract('style', 'css!sass')//外部化する
       },
       // jsファイルを読み込んだ場合にbabel-loaderを使用する。

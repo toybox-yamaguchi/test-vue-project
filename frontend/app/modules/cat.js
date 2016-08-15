@@ -1,9 +1,9 @@
 export default class Cat {
-  constructor(name) {
-    this.name = name;
+  constructor (name) {
+    this.name = name
   }
 
-  greet() {
+  greet () {
     return `Nyaaaan! I am ${this.name}`
   }
 }

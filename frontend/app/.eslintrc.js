@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
+  globals:{
+    //mocha
+    describe:false, context:false, it:false, specify:false, before:false, after:false, beforeEach:false, afterEach:false
+  },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
   // required to lint *.vue files
