@@ -48,7 +48,8 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue',
         loaders: {
-          //'scss': 'vue-style!css!sass'
+          //中のstylesでsassを使う
+          'scss': 'vue-style!css!sass'
         }
       },
       // cssファイルを読み込んだ場合にcss-loaderを使用する。
