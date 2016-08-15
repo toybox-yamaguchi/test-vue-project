@@ -6,30 +6,31 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('css/[name].css');
 
 //entryで使用されるJSファイル群で使用される共通モジュールはapp.jsに
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('app.js');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('js/common.js');
 
 //ローカル設定
 localSetting = {
   //パス
   path:{
     dist:{
-      root:'../../../public/',
+      root:'../../public/',
     }
   }
 }
 
 module.exports = {
   entry: {
-    app:'./main.js'
+    app:'./src/main.js'
   },
   output: {
     path: path.resolve(__dirname, localSetting.path.dist.root),
+    publicPath:'',
     filename: 'js/[name].js'
   },
   resolveLoader: {
     //ルートパスの設定
     root: [
-      path.join(__dirname, '../node_modules')
+      path.join(__dirname, '../node_modules'),
     ],
   },
   module: {
