@@ -2,12 +2,9 @@ var webpack = require('webpack')
 var config = require('./webpack.base.config')
 var merge = require('webpack-merge')
 
-config = merge(config, {});
-
-//production設定時
 if (process.env.NODE_ENV === 'production') {
   config = merge(config, {
-    devtool:'#source-map',
+    devtool:'#eval',//ビルドスピード最速の設定
   });
 
   // http://vue-loader.vuejs.org/en/workflow/production.html

@@ -94,10 +94,12 @@ module.exports = {
   plugins: [
     extractCSS
   ],
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
+
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
   },
+  // .mapファイルの出力設定
+  // http://dackdive.hateblo.jp/entry/2016/04/13/123000#devtool
   devtool: '#eval-source-map',
 
   // 他の設定
@@ -110,9 +112,6 @@ module.exports = {
       //例
       //bar: path.join('bower_components/foo/plugins/bar.js')
     }
-  },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
   }
 }
 

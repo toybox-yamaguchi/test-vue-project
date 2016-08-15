@@ -40,11 +40,8 @@ module.exports = (config) => {
     // Karma実行時のwebpack実行内容 (webpack.config.jsとは別)
     // jsファイルをES6 → ES5に変換 (preprocessorsの設定でtest配下のみ)
     webpack: {
-      devtool: 'inline-source-map',
+      devtool: '#inline-source-map',
       eslint: {
-        stopOnError: false,
-        stopOnWarning: true,
-        showWarnings: true,
         formatter: require('eslint-friendly-formatter')
       },
       module: {

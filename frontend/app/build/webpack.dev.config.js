@@ -15,12 +15,13 @@ module.exports = merge(config, {
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
     ),*/
-    //new webpack.HotModuleReplacementPlugin(),
+    // compile時にエラーが出たらskipする。
     new webpack.NoErrorsPlugin(),
     /*
+    // 指定した変数を他のモジュール内で使用できるようにする。globalには置かない。
     new webpack.ProvidePlugin({
-      jQuery: "jquery",
-      $: "jquery"
+      jQuery: 'jquery',
+      $: 'jquery'
     })*/
   ])
 });
