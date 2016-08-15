@@ -1,18 +1,32 @@
-# webpack_simple
+# readme
 
-> A Vue.js project
+## フォルダ構成
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+/public  
+┣ /css  
+┣ /js  
+┣ index.html  
+/app  
+┣ /src：ソースフォルダ  
+　┣ /components：vueコンポーネント  
+　┣ /libs：サードパーティライブラリ  
+　　┣ /js  
+　　┣ /css  
+　　┣ /sass  
+　┣ /modules：プロジェクトライブラリ
+　　┣ /js  
+　　┣ /css  
+　　┣ /sass  
+　┣ /pages：SPAページファイル  
+　┣ /vuex(models)：モデルファイル
+　┣ main.js  
+　┣ router.js  
+┣ .babellrc：babel設定ファイル  
+┣ .eslintrc.js：eslint設定ファイル  
+┣ bs-config.js：browser-sync設定ファイル  
+┣ karma-conf.js：karma設定ファイル  
+┣ package.json：npm package設定ファイル  
+┣ webpack.base.config.js：webpack設定基本ファイル  
+┣ webpack.dev.config.js：webpack設定開発ビルド用ファイル  
+┣ webpack.prod.config.js：webpack設定本番ビルド用ファイル  
+┣ README.md：これ  

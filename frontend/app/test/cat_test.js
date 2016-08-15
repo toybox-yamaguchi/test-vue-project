@@ -1,6 +1,6 @@
 import assert from 'power-assert'
 
-import Cat from '../modules/cat'
+import Cat from '../src/modules/cat'
 
 describe('Cat test', () => {
   var tama

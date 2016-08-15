@@ -4,9 +4,9 @@
   "author": "toybox.yamaguchi <toybox.yamaguchi@1pac.jp>",
   "private": true,
   "scripts": {
-    "_watch": "webpack --watch --progress --config build/webpack.dev.config.js",
-    "_serve": "browser-sync start --config build/bs-config.js",
-    "_production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.config.js",
+    "_watch": "webpack --watch --progress --config webpack.dev.config.js",
+    "_serve": "browser-sync start --config bs-config.js",
+    "_production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.prod.config.js",
     "_clean":"rimraf ../../public/js ../../public/css",
     "test": "karma start",
     "dev": "npm run _watch & npm run _serve",
