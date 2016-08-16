@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'production') {
     // モジュールに対し、設定値等の値を注入できるプラグイン
     new webpack.DefinePlugin({
       'process.env': {
+        // 警告ブロックが UglifyJS による圧縮中に自動的に削除される
         NODE_ENV: '"production"'
       }
     }),
