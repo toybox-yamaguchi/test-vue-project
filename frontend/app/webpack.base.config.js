@@ -1,12 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
+// var glob = require('glob')
 
 //別ファイルとして出力するようにするプラグイン
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('css/[name].css');
 
 //entryで使用されるJSファイル群で使用される共通モジュールはapp.jsに
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('js/common.js');
+// var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('js/common.js');
 
 //ローカル設定
 localSetting = {
@@ -98,8 +99,7 @@ module.exports = {
     ]
   },
   plugins: [
-    extractCSS,
-    commonsPlugin
+    extractCSS
   ],
 
   eslint: {
