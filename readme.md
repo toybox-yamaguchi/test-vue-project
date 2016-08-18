@@ -1,15 +1,19 @@
 # readme
 
 ## フォルダ構成
-┣ .edirotconfig：editor設定ファイル  
-┣ .gitignore：git設定ファイル  
-┣ README.md：これ  
+.edirotconfig：editor設定ファイル  
+.gitignore：git設定ファイル  
+README.md：これ  
 /public：  
 　┣ /css：cssファイル  
-  　┣ app.css  
+　　┣ /xxxx：静的コンテンツディレクトリ  
+　　┣ app.css  
 　┣ /js：jsファイル   
+　　┣ /xxxx：静的コンテンツディレクトリ  
 　　┣ app.js  
 　┣ /img：画像ファイル  
+　　┣ /xxxx：静的コンテンツディレクトリ  
+　　┣ /app  
 　┣ /data：データファイル（json、フォント、映像等）  
 　┣ index.html  
 　┣ /xxxx：静的コンテンツディレクトリ  
